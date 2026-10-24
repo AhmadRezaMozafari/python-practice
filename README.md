@@ -22,7 +22,7 @@ pytest -v
 -`practice/`— تمرین های پایه
 -`prime/` — تابع is_prime و تستها
 -`test_analyze/` — تابع analyze و تست ها
--`db.py` — توابع sqlite
+-`db.py` — توابع sqlite3
 
 
 ## چی یادگرفتم
