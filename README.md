@@ -19,10 +19,10 @@ pytest -v
 ```
 ## ساختار
 
--`practice/`- تمرین های پایه
--`prime/` - تابع is_prime و تستها
--`test_analyze/` - تابع analyze و تست ها
--`db.py` - توابع sqlite
+-`practice/`— تمرین های پایه
+-`prime/` — تابع is_prime و تستها
+-`test_analyze/` — تابع analyze و تست ها
+-`db.py` — توابع sqlite3
 
 
 ## چی یادگرفتم
