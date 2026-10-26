@@ -25,7 +25,6 @@ pytest -v
 - `test_analyze/` — تابع analyze و تست ها
 - `db.py` — توابع sqlite3
 
-
 ## چی یادگرفتم
 - نوشتن توابع قابل تست با type hint 
 - استفاده از pytest برای تست واحد
