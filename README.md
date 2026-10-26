@@ -1,5 +1,6 @@
+<h1 align="center">Python Practice</h1>
+
 <div dir='rtl'>
-# Python Practice
 
 تمرین های پایتون: حلقه ها،توابع،دیکشنری،شرطها،لیست،خطاها، sqlite3و تست با pytest
 
