@@ -1,5 +1,5 @@
 import sqlite3
-from main import *
+from models import Product
 
 
 def save_product(conn:sqlite3.Connection,product:Product) -> Product:
