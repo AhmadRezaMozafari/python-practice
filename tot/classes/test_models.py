@@ -1,6 +1,7 @@
 import pytest
 
 from main import *
+from repository import *
 
 @pytest.mark.parametrize('price,stock,expected_in_stock, expected_total_value',[
     (130000, 5, True, 650000),
@@ -45,6 +46,41 @@ def test_register_order_scenarios(sample_products, product_id, quantity, expecte
     
     assert expected_message in result
 
+def test_save_product_to_db(db_connection):
+    product = Product(id=0,name='Monitor',price=500000,stock=5)
+
+    saved_product = save_product(db_connection,product=product)
+
+    assert saved_product.id == 1
+
+    row = db_connection.execute("SELECT name,price,stock FROM products WHERE id = 1").fetchone()
+
+    assert row[0] == "Monitor"
+    assert row[1] == 7000000
+    assert row[2] == 5
+
+
+def test_get_all_products(db_connection):
+    p1 = Product(id=0, name="Mouse", price=500000, stock=10)
+    p2 = Product(id=0, name="Keyboard", price=1500000, stock=5)
+    save_product(db_connection, p1)
+    save_product(db_connection, p2)
+
+    all_products = get_all_products(db_connection)
+    assert len(all_products) == 2
+    assert all_products[0].name == "Mouse"
+    assert all_products[1].name == "Keyboard"
+    assert all_products[0].id == 1
+
+
+def test_update_product_stock(db_connection):
+    p = Product(id=0,name='Monitor',price=400000,stock=6)
+
+    save_product(db_connection,p)
+
+    result = update_product_stock(db_connection,product_id=p.id,new_stock=10)
+
+    assert result == True
 # def test_product_in_stock(single_product):
 #     p = single_product
 
