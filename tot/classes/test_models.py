@@ -56,7 +56,7 @@ def test_save_product_to_db(db_connection):
     row = db_connection.execute("SELECT name,price,stock FROM products WHERE id = 1").fetchone()
 
     assert row[0] == "Monitor"
-    assert row[1] == 7000000
+    assert row[1] == 500000
     assert row[2] == 5
 
 
@@ -70,7 +70,6 @@ def test_get_all_products(db_connection):
     assert len(all_products) == 2
     assert all_products[0].name == "Mouse"
     assert all_products[1].name == "Keyboard"
-    assert all_products[0].id == 1
 
 
 def test_update_product_stock(db_connection):

@@ -28,6 +28,7 @@ def get_all_products(conn:sqlite3.Connection) -> list[Product]:
             stock=row[3]
         )
 
+        products.append(p)
     return products
 
 
