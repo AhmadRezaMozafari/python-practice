@@ -1,2 +1,2 @@
 [tool.fastapi]
-entrypoint = "tot.classes.api:app"
+entrypoint = "api:app"
